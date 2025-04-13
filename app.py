@@ -13,8 +13,10 @@ def get_subfan_score():
         return jsonify({"error": "Please enter a valid wallet address."}), 400
 
     url = f"https://polygonscan.com/token/token-analytics?m=dark&contractAddress=0x2017fcaea540d2925430586dc92818035bfc2f50&a={wallet_address}&lg=en"
+    
+    # Add a common browser User-Agent header to mimic a real browser request
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
     }
 
     try:
